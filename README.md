@@ -1,8 +1,8 @@
 # styled-components-custom-properties-theme-provider
 
-Styled Components theme provider which uses CSS custom properties in browsers that support them, and falls back to styled components theme provider implementation in browsers that don't support CSS custom properties
+Custom theme provider which uses CSS custom properties in browsers that support them, and falls back to styled components theme provider implementation in browsers that don't support CSS custom properties.
 
-This project is in initial concept development stages and may not be ready for production use.
+**Note** *This project is in initial concept development stages and may not be ready for production use.*
 
 ## Install
 This package hasn't been published to NPM yet, need to do some more testing on it.
