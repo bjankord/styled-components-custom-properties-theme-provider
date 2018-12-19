@@ -1,13 +1,31 @@
-import 'react-app-polyfill/ie9';
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
+import React from "react";
+import { ThemeProvider } from "styled-components";
 
-ReactDOM.render(<App />, document.getElementById('root'));
+// Convert theme into CSS Custom Properties, set these on div inside ThemeProvider
+const CustomPropertiesThemeProvider = props => {
+  const CSSCustomProperties = Object.keys(props.theme).reduce(function (newObj, key) {
+    let newKey = `--${key}`;
+    newObj[newKey] = props.theme[key];
+    return newObj;
+  }, {});
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: http://bit.ly/CRA-PWA
-serviceWorker.unregister();
+  return (
+    <ThemeProvider theme={props.theme}>
+      {/* Thought, would it be better/faster to clone the style prop onto the children rather than using this div wrapper */}
+      <div style={CSSCustomProperties}>{props.children}</div>
+    </ThemeProvider>
+  );
+};
+
+
+// Check if browser supports CSS Custom properties, if so, use them
+// otherwise, fallback to styled-components theme provider implementation
+function themeProperty(prop, propertyName, variableName, fallback) {
+  if (window.CSS && CSS.supports("color", "var(--color)")) {
+    return `${propertyName}: var(--${variableName}, ${fallback});`;
+  } else {
+    return `${propertyName}: ${prop.theme[variableName]}`;
+  }
+}
+
+export { CustomPropertiesThemeProvider, themeProperty };
