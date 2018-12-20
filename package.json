@@ -1,7 +1,11 @@
 {
   "name": "styled-components-custom-properties-theme-provider",
   "version": "1.0.0-beta.1",
-  "description": "Custom theme provider which uses CSS custom properties in browsers that support them, and falls back to styled components theme provider implementation in browsers that don't support CSS custom properties.",
+  "main": "dist/index.js",
+  "files": [
+    "dist"
+  ],
+  "description": "Custom styled-components theme provider which uses CSS custom properties in browsers that support them. Will fallback to using styled components theme provider implementation in browsers that don't support CSS custom properties.",
   "author": "Brett Jankord",
   "license": "MIT",
   "repository": {
@@ -20,27 +24,6 @@
     "css variables",
     "css theming"
   ],
-  "peerDependencies": {
-    "react": "^16.6.3",
-    "react-app-polyfill": "^0.1.3",
-    "react-dom": "^16.6.3",
-    "react-scripts": "2.1.1",
-    "styled-components": "^4.1.3"
-  },
-  "devDependencies": {
-    "react": "^16.6.3",
-    "react-app-polyfill": "^0.1.3",
-    "react-dom": "^16.6.3",
-    "react-scripts": "2.1.1",
-    "styled-components": "^4.1.3"
-  },
-  "scripts": {
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test"
-  },
   "eslintConfig": {
     "extends": "react-app"
   },
@@ -50,7 +33,31 @@
     "ie <= 10",
     "not op_mini all"
   ],
-  "dependencies": {
-    "gh-pages": "^2.0.1"
+  "scripts": {
+    "build:component": "rimraf dist && NODE_ENV=production ./node_modules/.bin/babel src/lib --out-dir dist --copy-files --ignore __tests__,spec.js,test.js,__snapshots__",
+    "build:example": "react-scripts build",
+    "deploy": "npm run build:example && gh-pages -d build",
+    "start": "react-scripts start",
+    "test": "react-scripts test"
+  },
+  "peerDependencies": {
+    "react": "^16.6.3",
+    "react-app-polyfill": "^0.1.3",
+    "react-dom": "^16.6.3",
+    "react-scripts": "2.1.1",
+    "styled-components": "^4.1.3"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.2.3",
+    "@babel/core": "^7.2.2",
+    "@babel/preset-env": "^7.2.3",
+    "@babel/preset-react": "^7.0.0",
+    "gh-pages": "^2.0.1",
+    "react": "^16.6.3",
+    "react-app-polyfill": "^0.1.3",
+    "react-dom": "^16.6.3",
+    "react-scripts": "2.1.1",
+    "rimraf": "^2.6.2",
+    "styled-components": "^4.1.3"
   }
 }
