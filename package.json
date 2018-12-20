@@ -38,7 +38,8 @@
     "build:example": "react-scripts build",
     "deploy": "npm run build:example && gh-pages -d build",
     "start": "react-scripts start",
-    "test": "react-scripts test"
+    "test": "react-scripts test",
+    "prepublish": "npm run build:component"
   },
   "peerDependencies": {
     "react": "^16.6.3",
