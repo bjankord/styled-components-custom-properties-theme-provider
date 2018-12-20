@@ -1,7 +1,9 @@
 import React from "react";
 import styled from "styled-components";
 
-import { CustomPropertiesThemeProvider, themeProperty } from "./CustomPropertiesThemeProvider";
+// In your app, import these from styled-components-custom-properties-theme-provider
+// e.g. import { CustomPropertiesThemeProvider, themeProperty } from "styled-components-custom-properties-theme-provider";
+import { CustomPropertiesThemeProvider, themeProperty } from "./lib";
 
 const Button = styled.button`
   font-size: 1em;
@@ -39,13 +41,17 @@ const theme = {
 
 function App() {
   return (
-    <div style={{ padding: '1rem 2rem' }}>
-      <h1>styled-components-css-custom-properties-theme-provider</h1>
-      <p>Custom theme provider which uses CSS custom properties in browsers that support them, and falls back to styled components theme provider implementation in browsers that don't support CSS custom properties.</p>
+    <div>
+      <h1>styled-components-custom-properties-theme-provider</h1>
+      <p>Custom styled-components theme provider which uses CSS custom properties in browsers that support them. Will fallback to using styled components theme provider implementation in browsers that do not support CSS custom properties.</p>
       <Button>Default Themed Button</Button>
       <CustomPropertiesThemeProvider theme={theme}>
         <Button>Custom Themed Button</Button>
       </CustomPropertiesThemeProvider>
+      <h2>Implementation Notes</h2>
+      <p>This first button use CSS Custom property fallback syntax, <code>color: var(--button-color, palevioletred);</code> for a default theme. In browsers that do not support CSS custom properties, <code>Button.defaultProps.theme</code> is used to set the default / fallback value.</p>
+      <p>This second button sits inside the <code>CustomPropertiesThemeProvider</code> component. This component defines values for the CSS custom properties used in the <code>Button</code> component. e.g. <code>--button-color: mediumseagreen;</code>. In modern browsers, the CSS custom properties work as intended. In browsers that do not support CSS custom properties, the <code>CustomPropertiesThemeProvider</code> component uses <a href="https://www.styled-components.com/docs/advanced/#theming">styled-components theme provider implementation</a>.</p>
+      <a href="https://github.com/bjankord/styled-components-custom-properties-theme-provider/blob/master/src/App.js">View Usage</a>
     </div>
   );
 }

@@ -1,68 +1,11 @@
 # styled-components-custom-properties-theme-provider
 
-Styled Components theme provider which uses CSS custom properties in browsers that support them, and falls back to styled components theme provider implementation in browsers that don't support CSS custom properties
+Custom styled-components theme provider which uses CSS custom properties in browsers that support them. Will fallback to using styled components theme provider implementation in browsers that don't support CSS custom properties.
 
 This project is in initial concept development stages and may not be ready for production use.
 
-## Install
-This package hasn't been published to NPM yet, need to do some more testing on it.
+## [View Usage](https://github.com/bjankord/styled-components-custom-properties-theme-provider/blob/master/src/App.js)
 
-## Usage
-
-```jsx
-import React from "react";
-import styled from "styled-components";
-
-import { CustomPropertiesThemeProvider, themeProperty } from "./CustomPropertiesThemeProvider";
-
-const Button = styled.button`
-  font-size: 1em;
-  margin: 1em;
-  padding: 0.25em 1em;
-  border-radius: 3px;
-  border-width: 2px;
-  border-style: solid;
-  background-color: #fff;
-
-  /* Theming Properties */
-  ${props =>
-    themeProperty(props, "color", "button-color", "palevioletred")}
-  ${props =>
-    themeProperty(
-      props,
-      "border-color",
-      "button-border-color",
-      "palevioletred"
-    )}
-`;
-
-// Fallback values for default theme when using SC theme provider implementation
-Button.defaultProps = {
-  theme: {
-    "button-color": "palevioletred",
-    "button-border-color": "palevioletred"
-  }
-};
-
-// Custom Theme
-const theme = {
-  "button-color": "mediumseagreen",
-  "button-border-color": "mediumseagreen"
-};
-
-function App() {
-  return (
-    <div>
-      <Button>Default Themed Button</Button>
-      <CustomPropertiesThemeProvider theme={theme}>
-        <Button>Custom Themed Button</Button>
-      </CustomPropertiesThemeProvider>
-    </div>
-  );
-}
-
-export default App;
-```
 
 ## [License](https://github.com/bjankord/styled-components-custom-properties-theme-provider/blob/master/LICENSE)
 
