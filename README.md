@@ -4,8 +4,24 @@ Custom styled-components theme provider which uses CSS custom properties in brow
 
 This project is in initial concept development stages and may not be ready for production use.
 
-## [View Usage](https://github.com/bjankord/styled-components-custom-properties-theme-provider/blob/master/src/App.js)
+## Install
 
+With npm:
+```
+npm install styled-components-custom-properties-theme-provider
+```
+
+With yarn:
+```
+yarn add styled-components-custom-properties-theme-provider
+```
+
+## Demo
+[https://bjankord.github.io/styled-components-custom-properties-theme-provider/](https://bjankord.github.io/styled-components-custom-properties-theme-provider/)
+
+## Usage
+
+[![Edit Styled Components CSS Custom Properties Theming](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/n09o56kw8l)
 
 ## [License](https://github.com/bjankord/styled-components-custom-properties-theme-provider/blob/master/LICENSE)
 
