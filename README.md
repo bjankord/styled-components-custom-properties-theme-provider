@@ -58,15 +58,15 @@ Tested in production mode in CRA thanks to [@bvaughn's](https://github.com/bvaug
 
 | Measure | Styled Components ThemeProvider | CSS Custom Properties Theme Provider | CSS Custom Properties Theme Provider With Fallback |
 |---|---|---|---|
-| Actual time: | `124.89000125788152 ms`  | `79.23000038135797 ms` | `132.72499962477013 ms` |
-| Base time: | `98.1900017359294 ms`  | `54.56000013509765 ms` | `108.93000388750806 ms` |
+| Actual time: | `114.67500089202076 ms`  | `65.54000021424145 ms` | `122.44500109227374 ms` |
+| Base time: | `93.18000212078914 ms`  | `44.91499869618565 ms` | `99.71500077517703 ms` |
 
 **UPDATE phase:**
 
 | Measure | Styled Components ThemeProvider | CSS Custom Properties Theme Provider | CSS Custom Properties Theme Provider With Fallback |
 |---|---|---|---|
-| Actual time: | `47.399999224580824 ms`  | `19.380000478122383 ms` | `55.67500016372651 ms`  |
-| Base time: | `42.64499875716865 ms`  | `16.49500080384314 ms` | `52.7450011363253 ms` |
+| Actual time: | `42.78000054182485 ms`  | `18.06499983649701 ms` | `52.99499997636303 ms`  |
+| Base time: | `39.890000072773546 ms`  | `15.694999718107283 ms` | `50.529999658465385 ms` |
 
 Update phase was tested by supplying a new theme with entirely different values for each theme property.
 
@@ -76,15 +76,15 @@ Update phase was tested by supplying a new theme with entirely different values 
 
 | Measure | Styled Components ThemeProvider | CSS Custom Properties Theme Provider | CSS Custom Properties Theme Provider With Fallback |
 |---|---|---|---|
-| Actual time: | `283.78999704727903 ms`  | `258.3449993398972 ms` | `305.3549986798316 ms` |
-| Base time: | `215.9399957745336 ms`  | `191.82999794511124 ms` | `238.46000083722174 ms` |
+| Actual time: | `243.0450000683777 ms`  | `234.49500190326944 ms` | `272.86500280024484 ms` |
+| Base time: | `182.36999865621328 ms`  | `177.84500279230997 ms` | `209.2250018613413 ms` |
 
 **UPDATE phase:**
 
 | Measure | Styled Components ThemeProvider | CSS Custom Properties Theme Provider | CSS Custom Properties Theme Provider With Fallback |
 |---|---|---|---|
-| Actual time: | `116.15000036545098 ms`  | `104.96000404236838 ms` | `145.77000064309686 ms`  |
-| Base time: | `104.3099999660626 ms`  | `94.8250048677437 ms` | `133.60500015551224 ms` |
+| Actual time: | `97.6450014859438 ms`  | `89.05499934917316 ms` | `108.44500467646867 ms`  |
+| Base time: | `87.12000423111022 ms`  | `79.05499776825309 ms` | `99.06000515911728 ms` |
 
 Update phase was tested by supplying a new theme with entirely different values for each theme property.
 
@@ -92,9 +92,9 @@ Update phase was tested by supplying a new theme with entirely different values 
 
 | Measure | Styled Components ThemeProvider | CSS Custom Properties Theme Provider | CSS Custom Properties Theme Provider With Fallback |
 |---|---|---|---|
-| Total page time from start to load: | `532ms` | `437ms` | `500ms` |
-| Time spent constructing the DOM tree: | `296ms` | `257ms` | `249ms` |
-| Time spent rendering: | `527ms`  | `425ms` | `488ms`  |
+| Total page time from start to load:   | `428ms` | `398ms` | `489ms` |
+| Time spent constructing the DOM tree: | `179ms` | `165ms` | `179ms` |
+| Time spent rendering:                 | `409ms` | `374ms` | `466ms`  |
 
 ### tl;dr
 The CSS custom properties theme provider is a bit faster compared to the the default styled-components theme provider.

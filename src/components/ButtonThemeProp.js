@@ -1,7 +1,6 @@
-import React from 'react';
 import styled from 'styled-components';
 
-const StyledButton = styled.button`
+const Button = styled.button`
   background-color: ${props => props.theme["button-background-color"]};
   border-color: ${props => props.theme["button-border-color"]};
   border-radius: ${props => props.theme["button-border-radius"]};
@@ -24,11 +23,10 @@ const StyledButton = styled.button`
   text-align: center;
   text-decoration: none;
   text-transform: none;
-  touch-action: manipulation; /* Enable fast tap interaction in webkit browsers; see https://webkit.org/blog/5610/more-responsive-tapping-on-ios/ */
-  user-select: none; /* Prevent text selection on buttons on mobile devices */
+  touch-action: manipulation;
+  user-select: none;
   white-space: normal;
 
-  /* Remove the inner border and padding in Firefox. */
   &::-moz-focus-inner {
     border: 0;
     padding: 0;
@@ -55,7 +53,7 @@ const StyledButton = styled.button`
   }
 `;
 
-StyledButton.defaultProps = {
+Button.defaultProps = {
   theme: {
     'button-backgroundColor': '#dedfe0',
     'button-border-color': '#c8cacb',
@@ -76,24 +74,6 @@ StyledButton.defaultProps = {
     'button-active-border-color': '#52585b',
     'button-active-color': '#fff',
   }
-};
-
-const Button = props => {
-  const {
-    text,
-    type,
-    children,
-    ...customProps
-  } = props;
-  return (
-    <StyledButton {...customProps} type={type}>
-      {children}
-    </StyledButton>
-  );
-};
-
-Button.defaultProps = {
-  type: 'button'
 };
 
 export default Button;

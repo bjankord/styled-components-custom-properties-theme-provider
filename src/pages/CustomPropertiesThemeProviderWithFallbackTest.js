@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-import { CustomPropertiesThemeProvider } from "../lib";
+import { CustomPropertiesFallbackThemeProvider } from "../lib";
 import profilerLogger from '../utils/profilerLogger';
 import createNArray from '../utils/createNArray';
 import Button from '../components/ButtonCSSPropertyWithFallback';
@@ -25,11 +25,11 @@ class CustomPropertiesThemeProviderTest extends Component {
       <button type="button" onClick={this.changeTheme}>Change Theme</button>
       <hr />
       <Profiler id="custom properties theme provider" onRender={profilerLogger}>
-        <CustomPropertiesThemeProvider theme={this.state.theme ? theme1 : theme2 }>
+        <CustomPropertiesFallbackThemeProvider theme={this.state.theme ? theme1 : theme2 }>
           <div>
             {arry.map(i => <Button key={i}>Themed Button</Button>)}
           </div>
-        </CustomPropertiesThemeProvider>
+        </CustomPropertiesFallbackThemeProvider>
       </Profiler>
     </div>);
   }

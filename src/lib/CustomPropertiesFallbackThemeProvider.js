@@ -3,20 +3,10 @@ import { ThemeProvider } from "styled-components";
 
 import CustomPropertiesThemeProvider from './CustomPropertiesThemeProvider';
 
+const ComponentType = window.CSS && CSS.supports("color", "var(--color)") ? CustomPropertiesThemeProvider : ThemeProvider;
+
 const CustomPropertiesFallbackThemeProvider = props => {
-  if (window.CSS && CSS.supports("color", "var(--c)")) {
-    return (
-      <CustomPropertiesThemeProvider theme={props.theme}>
-        {props.children}
-      </CustomPropertiesThemeProvider>
-    );
-  } else {
-    return (
-      <ThemeProvider theme={props.theme}>
-        {props.children}
-      </ThemeProvider>
-    );
-  }
+  return (<ComponentType theme={props.theme}>{props.children}</ComponentType>);
 };
 
 export default CustomPropertiesFallbackThemeProvider;
