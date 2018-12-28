@@ -1,7 +1,6 @@
 import React from "react";
-import { ThemeProvider } from "styled-components";
 
-/* Convert theme into CSS Custom Properties, set these on div inside ThemeProvider */
+/* Convert theme into CSS custom properties */
 const CustomPropertiesThemeProvider = props => {
   const CSSCustomProperties = Object.keys(props.theme).reduce(function (
     newObj,
@@ -10,15 +9,11 @@ const CustomPropertiesThemeProvider = props => {
     let newKey = `--${key}`;
     newObj[newKey] = props.theme[key];
     return newObj;
-  },
-    {});
+  }, {});
 
-  return (
-    <ThemeProvider theme={props.theme}>
-      {/* Thought, would it be better/faster to clone the style prop onto the children rather than using this div wrapper */}
-      <div style={CSSCustomProperties}>{props.children}</div>
-    </ThemeProvider>
-  );
+  /* Set CSS custom properties on the direct child as inline styles */
+  let style = props.children.style ? Object.assign(props.children.style, CSSCustomProperties) : CSSCustomProperties;
+  return React.Children.only(React.cloneElement(props.children, { style }));
 };
 
 export default CustomPropertiesThemeProvider;
