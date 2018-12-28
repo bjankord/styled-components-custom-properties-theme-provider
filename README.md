@@ -23,6 +23,53 @@ yarn add styled-components-custom-properties-theme-provider
 
 [![Edit Styled Components CSS Custom Properties Theming](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/n09o56kw8l)
 
+**NOTE**
+*The CSS Custom Property Theme Proivder returns its children when rendering, so it must only wrap a __single child node__, similar to how the `<ThemeProvider>` component works from styled-components.*
+
+*One additional constraint is that this single child node must be a DOM element, e.g. (this can't be a React.Fragment node), as this element is used to set inline styles for the CSS custom properties.*
+
+*Another constraint is that your keys in your theme need to be a flat, single level with the key names being values that can be uses as CSS custom properties. eg. `"button-background-color": "mediumseagreen"`*
+
+## Performance Notes
+
+Originally, I started exploring this idea thinking this would be faster for theming as the styled component wouldn't need to read multiple items off of the theme object.
+
+I've set up 3 pages to test 3 implementations.
+
+* [Default Styled Components Theme Provider with 2000 themed buttons](https://bjankord.github.io/styled-components-custom-properties-theme-provider/theme-provider-test-page)
+* [CSS Custom Properties Theme Provider with 2000 themed buttons](https://bjankord.github.io/styled-components-custom-properties-theme-provider/custom-properties-theme-provider-test-page)
+* [CSS Custom Properties Theme Provider (with fallback support) with 2000 themed buttons](https://bjankord.github.io/styled-components-custom-properties-theme-provider/custom-properties-theme-provider-with-fallback-test-page)
+
+In testing I've found that using the CSS custom properties based theme provider (without including fallback support for browsers that don't support CSS properties) is faster compared to the default styled-components theme provider.
+
+However, the implementation that uses the CSS custom properties based theme provider and falls back to using the the default styled-components theme provider is noticeably slower compared to using the default styled-components theme provider. This can be seen in the demo when changing themes.
+
+### Testing with React.unstable_Profiler
+
+I've wrapped the theme provider in each demo with a Profiler component from [React.unstable_Profiler](https://github.com/reactjs/rfcs/pull/51);
+
+Below is the mean average from 20 test runs for each demo.
+
+**MOUNT phase:**
+| Measurements| Styled Components ThemeProvider | CSS Custom Properties Theme Provider | CSS Custom Properties Theme Provider With Fallback |
+|---|---|---|---|---|
+| Actual time: | `283.78999704727903 ms`  | `258.3449993398972 ms` | `305.3549986798316 ms` |
+| Base time: | `215.9399957745336 ms`  | `191.82999794511124 ms` | `238.46000083722174 ms` |
+
+**UPDATE phase:**
+
+| Measurements| Styled Components ThemeProvider | CSS Custom Properties Theme Provider | CSS Custom Properties Theme Provider With Fallback |
+|---|---|---|---|---|
+| Actual time: | `116.15000036545098 ms`  | `104.96000404236838 ms` | `145.77000064309686 ms`  |
+| Base time: | `104.3099999660626 ms`  | `94.8250048677437 ms` | `133.60500015551224 ms` |
+
+Update phase was tested by supplying a new theme with entirely different values for each theme property.
+
+### tl;dr
+If you want a fast theme provider and do not need to support browsers which don't support CSS custom properties, check out the CSS Custom Properties Theme Provider.
+
+If you do need to support browsers that don't support CSS custom properties, the default styled-components theme provider will be faster compared to the CSS Custom Properties Theme Provider which offers fallback support.
+
 ## [License](https://github.com/bjankord/styled-components-custom-properties-theme-provider/blob/master/LICENSE)
 
 
