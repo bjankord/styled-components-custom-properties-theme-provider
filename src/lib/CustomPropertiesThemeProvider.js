@@ -1,7 +1,7 @@
 import React from "react";
 
 /* Convert theme into CSS custom properties */
-const CustomThemeProvider = props => {
+const CustomPropertiesThemeProvider = props => {
   const CSSCustomProperties = Object.keys(props.theme).reduce(function (
     newObj,
     key
@@ -16,4 +16,4 @@ const CustomThemeProvider = props => {
   return React.Children.only(React.cloneElement(props.children, { style }));
 };
 
-export default CustomThemeProvider;
+export default CustomPropertiesThemeProvider;

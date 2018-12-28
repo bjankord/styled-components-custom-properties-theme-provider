@@ -1,5 +1,5 @@
 import CustomPropertiesThemeProvider from "./CustomPropertiesThemeProvider";
-import CustomThemeProvider from "./CustomPropertiesThemeProvider";
+import CustomPropertiesFallbackThemeProvider from "./CustomPropertiesFallbackThemeProvider";
 import themeProperty from "./themeProperty";
 
-export { CustomPropertiesThemeProvider, CustomThemeProvider, themeProperty };
+export { CustomPropertiesThemeProvider, CustomPropertiesFallbackThemeProvider, themeProperty };
