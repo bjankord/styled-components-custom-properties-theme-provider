@@ -4,6 +4,11 @@ Changelog
 Unreleased
 ----------
 
+1.0.0-beta.3 - (December 28th, 2018)
+------------------------------------
+### Change
+* Simplify CustomPropertiesFallbackThemeProvider code
+
 1.0.0-beta.2 - (December 28th, 2018)
 ------------------------------------
 ### Breaking Changes
