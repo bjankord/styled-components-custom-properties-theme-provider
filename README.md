@@ -53,16 +53,18 @@ Below is the mean average from 20 test runs for each demo collected from running
 Tested in production mode in CRA thanks to [@bvaughn's](https://github.com/bvaughn) gist here: https://gist.github.com/bvaughn/25e6233aeb1b4f0cdb8d8366e54a3977
 
 #### Production Mode
+
 **MOUNT phase:**
-| Measurements| Styled Components ThemeProvider | CSS Custom Properties Theme Provider | CSS Custom Properties Theme Provider With Fallback |
-|---|---|---|---|---|
+
+| Measurements | Styled Components ThemeProvider | CSS Custom Properties Theme Provider | CSS Custom Properties Theme Provider With Fallback |
+|---|---|---|---|
 | Actual time: | `124.89000125788152 ms`  | `79.23000038135797 ms` | `132.72499962477013 ms` |
 | Base time: | `98.1900017359294 ms`  | `54.56000013509765 ms` | `108.93000388750806 ms` |
 
 **UPDATE phase:**
 
-| Measurements| Styled Components ThemeProvider | CSS Custom Properties Theme Provider | CSS Custom Properties Theme Provider With Fallback |
-|---|---|---|---|---|
+| Measurements | Styled Components ThemeProvider | CSS Custom Properties Theme Provider | CSS Custom Properties Theme Provider With Fallback |
+|---|---|---|---|
 | Actual time: | `47.399999224580824 ms`  | `19.380000478122383 ms` | `55.67500016372651 ms`  |
 | Base time: | `42.64499875716865 ms`  | `16.49500080384314 ms` | `52.7450011363253 ms` |
 
@@ -71,8 +73,9 @@ Update phase was tested by supplying a new theme with entirely different values 
 #### Development Mode
 
 **MOUNT phase:**
-| Measurements| Styled Components ThemeProvider | CSS Custom Properties Theme Provider | CSS Custom Properties Theme Provider With Fallback |
-|---|---|---|---|---|
+
+| Measurements | Styled Components ThemeProvider | CSS Custom Properties Theme Provider | CSS Custom Properties Theme Provider With Fallback |
+|---|---|---|---|
 | Actual time: | `283.78999704727903 ms`  | `258.3449993398972 ms` | `305.3549986798316 ms` |
 | Base time: | `215.9399957745336 ms`  | `191.82999794511124 ms` | `238.46000083722174 ms` |
 
