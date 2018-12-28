@@ -78,8 +78,8 @@ Update phase was tested by supplying a new theme with entirely different values 
 
 **UPDATE phase:**
 
-| Measurements| Styled Components ThemeProvider | CSS Custom Properties Theme Provider | CSS Custom Properties Theme Provider With Fallback |
-|---|---|---|---|---|
+| Measurements | Styled Components ThemeProvider | CSS Custom Properties Theme Provider | CSS Custom Properties Theme Provider With Fallback |
+|---|---|---|---|
 | Actual time: | `116.15000036545098 ms`  | `104.96000404236838 ms` | `145.77000064309686 ms`  |
 | Base time: | `104.3099999660626 ms`  | `94.8250048677437 ms` | `133.60500015551224 ms` |
 
@@ -87,14 +87,14 @@ Update phase was tested by supplying a new theme with entirely different values 
 
 ### Testing with puppeteer
 
-| Measurements| Styled Components ThemeProvider | CSS Custom Properties Theme Provider | CSS Custom Properties Theme Provider With Fallback |
-|---|---|---|---|---|
+| Measurements | Styled Components ThemeProvider | CSS Custom Properties Theme Provider | CSS Custom Properties Theme Provider With Fallback |
+|---|---|---|---|
 | Total page time from start to load: | `532ms` | `437ms` | `500ms` |
 | Time spent constructing the DOM tree: | `296ms` | `257ms` | `249ms` |
 | Time spent rendering: | `527ms`  | `425ms` | `488ms`  |
 
 ### tl;dr
-The CSS Custom Properties Theme Provider is a bit faster compared to the the default styled-components theme provider.
+The CSS custom properties theme provider is a bit faster compared to the the default styled-components theme provider.
 
 If you do need to support browsers that don't support CSS custom properties, the default styled-components theme provider will be faster compared to the CSS Custom Properties Theme Provider which offers fallback support.
 
