@@ -56,14 +56,14 @@ Tested in production mode in CRA thanks to [@bvaughn's](https://github.com/bvaug
 
 **MOUNT phase:**
 
-| Measurements | Styled Components ThemeProvider | CSS Custom Properties Theme Provider | CSS Custom Properties Theme Provider With Fallback |
+| Measure | Styled Components ThemeProvider | CSS Custom Properties Theme Provider | CSS Custom Properties Theme Provider With Fallback |
 |---|---|---|---|
 | Actual time: | `124.89000125788152 ms`  | `79.23000038135797 ms` | `132.72499962477013 ms` |
 | Base time: | `98.1900017359294 ms`  | `54.56000013509765 ms` | `108.93000388750806 ms` |
 
 **UPDATE phase:**
 
-| Measurements | Styled Components ThemeProvider | CSS Custom Properties Theme Provider | CSS Custom Properties Theme Provider With Fallback |
+| Measure | Styled Components ThemeProvider | CSS Custom Properties Theme Provider | CSS Custom Properties Theme Provider With Fallback |
 |---|---|---|---|
 | Actual time: | `47.399999224580824 ms`  | `19.380000478122383 ms` | `55.67500016372651 ms`  |
 | Base time: | `42.64499875716865 ms`  | `16.49500080384314 ms` | `52.7450011363253 ms` |
@@ -74,14 +74,14 @@ Update phase was tested by supplying a new theme with entirely different values 
 
 **MOUNT phase:**
 
-| Measurements | Styled Components ThemeProvider | CSS Custom Properties Theme Provider | CSS Custom Properties Theme Provider With Fallback |
+| Measure | Styled Components ThemeProvider | CSS Custom Properties Theme Provider | CSS Custom Properties Theme Provider With Fallback |
 |---|---|---|---|
 | Actual time: | `283.78999704727903 ms`  | `258.3449993398972 ms` | `305.3549986798316 ms` |
 | Base time: | `215.9399957745336 ms`  | `191.82999794511124 ms` | `238.46000083722174 ms` |
 
 **UPDATE phase:**
 
-| Measurements | Styled Components ThemeProvider | CSS Custom Properties Theme Provider | CSS Custom Properties Theme Provider With Fallback |
+| Measure | Styled Components ThemeProvider | CSS Custom Properties Theme Provider | CSS Custom Properties Theme Provider With Fallback |
 |---|---|---|---|
 | Actual time: | `116.15000036545098 ms`  | `104.96000404236838 ms` | `145.77000064309686 ms`  |
 | Base time: | `104.3099999660626 ms`  | `94.8250048677437 ms` | `133.60500015551224 ms` |
@@ -90,7 +90,7 @@ Update phase was tested by supplying a new theme with entirely different values 
 
 ### Testing with puppeteer
 
-| Measurements | Styled Components ThemeProvider | CSS Custom Properties Theme Provider | CSS Custom Properties Theme Provider With Fallback |
+| Measure | Styled Components ThemeProvider | CSS Custom Properties Theme Provider | CSS Custom Properties Theme Provider With Fallback |
 |---|---|---|---|
 | Total page time from start to load: | `532ms` | `437ms` | `500ms` |
 | Time spent constructing the DOM tree: | `296ms` | `257ms` | `249ms` |
